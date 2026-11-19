@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Triara Co. — Responsible Technology &amp; Environmental Recycling</title>
+<meta name="description" content="Triara Co. is a Houston-based environmental recycling company focused on technology, batteries, and materials that require careful, responsible handling.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>♻️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F4F6F3; --card: #FFFFFF; --card-edge: #E2E8E3;
+    --ink: #16231C; --muted: #5C6B61;
+    --accent: #2F6B4F; --accent-ink: #1F4A36; --accent-bg: #E3EDE6;
+    --line: rgba(22,35,28,0.12); --shadow: rgba(22,35,28,0.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #0F1613; --card: #17201B; --card-edge: #243029;
+      --ink: #E8EDE9; --muted: #93A398;
+      --accent: #5FAE85; --accent-ink: #9ED4B5; --accent-bg: #1E2E25;
+      --line: rgba(232,237,233,0.14); --shadow: rgba(0,0,0,0.3);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #0F1613; --card: #17201B; --card-edge: #243029;
+    --ink: #E8EDE9; --muted: #93A398;
+    --accent: #5FAE85; --accent-ink: #9ED4B5; --accent-bg: #1E2E25;
+    --line: rgba(232,237,233,0.14); --shadow: rgba(0,0,0,0.3);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--paper); color: var(--ink); font-family: "IBM Plex Sans", -apple-system, "Segoe UI", sans-serif; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { font-family: "Manrope", -apple-system, sans-serif; text-wrap: balance; line-height: 1.15; }
+  .mono { font-family: "IBM Plex Mono", monospace; font-variant-numeric: tabular-nums; }
+  a { color: inherit; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; }
+
+  nav { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--paper) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 1rem; padding-bottom: 1rem; }
+  .logo { font-family: "Manrope", sans-serif; font-weight: 800; font-size: 1.2rem; letter-spacing: -0.01em; display: flex; align-items: baseline; gap: 0.4rem; }
+  .logo .dot { color: var(--accent); }
+  nav .right { display: flex; align-items: center; gap: 2rem; }
+  nav ul { list-style: none; display: flex; gap: 2rem; font-size: 0.92rem; font-weight: 500; }
+  nav ul a { text-decoration: none; color: var(--muted); }
+  nav ul a:hover { color: var(--ink); }
+  .lang-switch { font-family: "IBM Plex Mono", monospace; font-size: 0.82rem; text-decoration: none; border: 1px solid var(--card-edge); border-radius: 999px; padding: 0.4rem 0.9rem; color: var(--ink); }
+  @media (max-width: 760px) { nav ul { display: none; } }
+
+  .hero { padding: 5rem 0 4.5rem; border-bottom: 1px solid var(--line); }
+  .hero .eyebrow { font-family: "IBM Plex Mono", monospace; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-ink); background: var(--accent-bg); display: inline-block; padding: 0.35rem 0.8rem; border-radius: 999px; margin-bottom: 1.5rem; }
+  .hero h1 { font-size: clamp(2.1rem, 4.5vw, 3.4rem); font-weight: 800; max-width: 20ch; margin-bottom: 1.3rem; }
+  .hero h1 .accent { color: var(--accent); }
+  .hero p.lede { font-size: 1.15rem; color: var(--muted); max-width: 52ch; margin-bottom: 2.2rem; }
+  .cta-row { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 1.5rem; border-radius: 10px; font-weight: 600; font-size: 0.98rem; text-decoration: none; border: 1px solid transparent; transition: transform 0.15s ease; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn.primary { background: var(--accent); color: #fff; }
+  .btn.secondary { background: var(--card); color: var(--ink); border-color: var(--card-edge); }
+
+  section.block { padding: 4.5rem 0; border-bottom: 1px solid var(--line); }
+  .kicker { font-family: "IBM Plex Mono", monospace; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.8rem; }
+  section.block h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; max-width: 26ch; margin-bottom: 1rem; }
+  section.block > .wrap > p.intro { color: var(--muted); font-size: 1.05rem; max-width: 60ch; margin-bottom: 2.8rem; }
+
+  .focus-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  @media (max-width: 860px) { .focus-grid { grid-template-columns: 1fr; } }
+  .focus-card { background: var(--card); border: 1px solid var(--card-edge); border-radius: 16px; padding: 2rem; box-shadow: 0 1px 0 var(--shadow); }
+  .focus-card .icon { width: 46px; height: 46px; border-radius: 12px; background: var(--accent-bg); display: grid; place-items: center; font-size: 1.4rem; margin-bottom: 1.2rem; }
+  .focus-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.6rem; }
+  .focus-card p { color: var(--muted); font-size: 0.96rem; }
+
+  .company-card { background: var(--card); border: 1px solid var(--card-edge); border-radius: 16px; padding: 2.2rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+  .company-card .info h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .company-card .info p { color: var(--muted); max-width: 54ch; }
+  .company-card .tag { font-family: "IBM Plex Mono", monospace; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-ink); background: var(--accent-bg); padding: 0.3rem 0.7rem; border-radius: 999px; display: inline-block; margin-bottom: 0.8rem; }
+
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; margin-top: 2.5rem; }
+  @media (max-width: 680px) { .stats { grid-template-columns: 1fr; } }
+  .stats .cell { background: var(--card); padding: 1.4rem 1.6rem; }
+  .stats .cell .num { font-family: "Manrope", sans-serif; font-weight: 800; font-size: 1.9rem; color: var(--accent-ink); }
+  .stats .cell .lbl { font-size: 0.86rem; color: var(--muted); margin-top: 0.2rem; }
+
+  .about-grid p { color: var(--muted); margin-bottom: 1rem; max-width: 70ch; }
+  .about-grid p strong { color: var(--ink); }
+
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+  @media (max-width: 760px) { .contact-grid { grid-template-columns: 1fr; } }
+  .contact-list { list-style: none; display: flex; flex-direction: column; gap: 1.1rem; }
+  .contact-list li { display: flex; flex-direction: column; gap: 0.15rem; }
+  .contact-list .k { font-size: 0.8rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
+  .contact-list .v { font-size: 1.05rem; font-weight: 600; }
+  .contact-list .v a { text-decoration: none; color: var(--accent-ink); }
+
+  footer { padding: 2.5rem 0; }
+  footer .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.85rem; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo">Triara <span class="dot">Co.</span></div>
+    <div class="right">
+      <ul>
+        <li><a href="#what-we-do">What We Do</a></li>
+        <li><a href="#companies">Our Companies</a></li>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="es.html" class="lang-switch">ES — Español</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Environmental &amp; Technology Recycling</span>
+    <h1>Responsible recycling for the <span class="accent">materials that matter most.</span></h1>
+    <p class="lede">Triara Co. is a Houston-based environmental recycling company. We handle technology, batteries, and the materials that require careful, responsible disposal — for corporations that care about doing it right.</p>
+    <div class="cta-row">
+      <a href="#what-we-do" class="btn primary">What we recycle</a>
+      <a href="#companies" class="btn secondary">Our companies</a>
+    </div>
+  </div>
+</header>
+
+<section class="block" id="what-we-do">
+  <div class="wrap">
+    <span class="kicker">What We Do</span>
+    <h2>Careful handling for materials that can't just go in the trash.</h2>
+    <p class="intro">Technology, batteries, and other materials carry real environmental risk when they're handled carelessly. We make sure they're not.</p>
+
+    <div class="focus-grid">
+      <div class="focus-card">
+        <div class="icon">💻</div>
+        <h3>Technology Recycling</h3>
+        <p>Computers, laptops, and corporate IT equipment recovered and processed responsibly — through our operation in Mexico, Ratazzi México.</p>
+      </div>
+      <div class="focus-card">
+        <div class="icon">🔋</div>
+        <h3>Battery &amp; Hazardous Materials</h3>
+        <p>Batteries and other materials that require specialized, environmentally responsible disposal.</p>
+      </div>
+      <div class="focus-card">
+        <div class="icon">🌱</div>
+        <h3>Environmental Stewardship</h3>
+        <p>We treat recycling as a responsibility, not just a service — minimizing environmental impact at every step.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="companies">
+  <div class="wrap">
+    <span class="kicker">Our Companies</span>
+    <h2>Operating across Houston and Mexico.</h2>
+    <p class="intro">Triara Co. operates through dedicated companies in each market we serve.</p>
+
+    <div class="company-card">
+      <div class="info">
+        <span class="tag">Mexico Operation</span>
+        <h3>Ratazzi México</h3>
+        <p>Collects, recovers, and resells corporate computer equipment in Mexico — backed by Triara Co.'s experience and standards.</p>
+      </div>
+      <a href="https://ratazzimex.com" class="btn primary" target="_blank" rel="noopener">Visit Ratazzi México</a>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="story">
+  <div class="wrap">
+    <span class="kicker">Our Story</span>
+    <h2>Decades of experience managing corporate technology.</h2>
+
+    <div class="about-grid">
+      <p>Triara Co. is based in Houston, Texas. Our leadership built its foundation managing corporate technology at scale — since <strong>1993</strong>, administering and leasing computer equipment for some of the world's largest brands, including <strong>Volkswagen, Audi, and Daimler</strong>, across contracts covering more than <strong>5,000 units</strong>.</p>
+      <p>We bring that same discipline to environmental recycling — making sure technology, batteries, and other sensitive materials are handled responsibly, not just discarded.</p>
+    </div>
+
+    <div class="stats">
+      <div class="cell">
+        <div class="num mono">30+</div>
+        <div class="lbl">years in corporate technology</div>
+      </div>
+      <div class="cell">
+        <div class="num mono">5,000+</div>
+        <div class="lbl">units managed for VW, Audi &amp; Daimler</div>
+      </div>
+      <div class="cell">
+        <div class="num mono">1993</div>
+        <div class="lbl">where our leadership's experience began</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="contact" style="border-bottom:none;">
+  <div class="wrap">
+    <span class="kicker">Contact</span>
+    <h2>Have materials that need responsible recycling?</h2>
+
+    <div class="contact-grid">
+      <ul class="contact-list">
+        <li>
+          <span class="k">Email</span>
+          <span class="v"><a href="mailto:alozada@triaraco.com">alozada@triaraco.com</a></span>
+        </li>
+        <li>
+          <span class="k">Based in</span>
+          <span class="v">Houston, Texas</span>
+        </li>
+        <li>
+          <span class="k">Mexico operation</span>
+          <span class="v"><a href="https://ratazzimex.com">ratazzimex.com</a></span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Triara Co.</span>
+    <span>triaraco.com</span>
+  </div>
+</footer>
+
+</body>
+</html>
